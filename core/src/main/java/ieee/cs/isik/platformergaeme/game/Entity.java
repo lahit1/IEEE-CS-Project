@@ -1,8 +1,8 @@
 package ieee.cs.isik.platformergaeme.game;
 
 import com.badlogic.gdx.physics.box2d.Body;
+import org.jetbrains.annotations.NotNull;
 
-import javax.validation.constraints.NotNull;
 
 /**
  * This class represents any dynamic object in the game that going to be or has been registered to a server.

@@ -4,8 +4,8 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import ieee.cs.isik.platformergaeme.screens.GameScreen;
 import ieee.cs.isik.platformergaeme.screens.MenuScreen;
+import org.jetbrains.annotations.NotNull;
 
-import javax.validation.constraints.NotNull;
 import java.awt.*;
 
 
@@ -29,7 +29,6 @@ public class GameManager {
      *
      * @see Game
      */
-    @NotNull
     protected static Game game;
 
     /**
