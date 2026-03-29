@@ -5,18 +5,26 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.World;
 
 public class GameScreen implements Screen {
+
+    /** This {@link World} object is part of the physics engine 'box2d'
+     * @see World
+     */
+    World physicsWorld = new World(
+        new Vector2(0, -9.8f), // Default gravity of the World, 9.8 m / s^2 to the down
+        true // Allow sleep state, this will ignore in active bodies which is going to improve  game performance
+    );
 
     /**
      * Called when this screen becomes the current screen for a {@link Game}.
      */
     @Override
     public void show() {
-
         // Set default background color
         Gdx.gl20.glClearColor(0, 0, 0, 1);
-
     }
 
     /**
@@ -31,6 +39,13 @@ public class GameScreen implements Screen {
          * This will paint entire screen to the default color that we decided in show() with Gdx.gl20.glClearColor function
          */
         Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        // Iterate the physics world according to delta time
+        physicsWorld.step(
+            delta,
+            6, // Since the game not going to have high speed entities this much of velocity iteration is enough
+            2 // If entities gets conflict so much we must increase position iterations.
+        );
     }
 
     /**
@@ -72,6 +87,6 @@ public class GameScreen implements Screen {
      */
     @Override
     public void dispose() {
-
+        physicsWorld.dispose();
     }
 }
