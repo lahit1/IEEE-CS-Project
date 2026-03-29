@@ -22,7 +22,9 @@ public abstract class Entity extends IEntity {
 
         this.body = body;
     }
-
+    public void car() {
+        int x = 1;
+    }
     @NotNull
     public Body getBody() {
         return body;
