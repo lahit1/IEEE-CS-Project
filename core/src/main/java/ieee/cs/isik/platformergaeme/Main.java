@@ -4,9 +4,9 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 
 /**
- * @implNote When Game get created, {@link Main#create()} function gets called. In this function we define {@link GameManager#game} to current {@link Main}
+ * When Game get created, {@link Main#create()} function gets called. In this function we define {@link GameManager#game} to current {@link Main}
  *
- * @implNote This project use OpenGL 2.0
+ * This project use OpenGL 2.0
  * @see Game
  * @see GameManager
  **/
