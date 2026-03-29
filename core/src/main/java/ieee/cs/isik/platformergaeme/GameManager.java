@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import ieee.cs.isik.platformergaeme.screens.GameScreen;
 import ieee.cs.isik.platformergaeme.screens.MenuScreen;
 
+import javax.validation.constraints.NotNull;
 import java.awt.*;
 
 
@@ -28,6 +29,7 @@ public class GameManager {
      *
      * @see Game
      */
+    @NotNull
     protected static Game game;
 
     /**
@@ -37,7 +39,7 @@ public class GameManager {
      *
      * @see Game#setScreen(Screen)
      */
-    public static void show(ScreenType type) {
+    public static void show(@NotNull ScreenType type) {
         switch (type) {
             case MenuType:
                 game.setScreen(new MenuScreen());

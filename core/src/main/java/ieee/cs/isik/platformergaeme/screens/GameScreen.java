@@ -13,7 +13,7 @@ public class GameScreen implements Screen {
     /** This {@link World} object is part of the physics engine 'box2d'
      * @see World
      */
-    World physicsWorld = new World(
+    public final World physicsWorld = new World(
         new Vector2(0, -9.8f), // Default gravity of the World, 9.8 m / s^2 to the down
         true // Allow sleep state, this will ignore in active bodies which is going to improve  game performance
     );
