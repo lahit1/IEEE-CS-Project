@@ -1,13 +1,15 @@
 package ieee.cs.isik.platformergaeme.game;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import org.jetbrains.annotations.NotNull;
 
 public class TextureMaterial extends Material {
 
     /// The texture that going to be drawn
+    @NotNull
     public TextureRegion texture;
 
-    public TextureMaterial(TextureRegion texture) {
+    public TextureMaterial(@NotNull TextureRegion texture) {
         this.texture = texture;
     }
 

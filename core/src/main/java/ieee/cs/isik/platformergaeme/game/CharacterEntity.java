@@ -11,14 +11,14 @@ import org.jetbrains.annotations.NotNull;
  */
 public class CharacterEntity extends Entity {
 
-    /// Weapons can be used repeatly, weapon should not be null
+    /// Weapons can be used repeatedly, can be null
     public WeaponEntity weapon;
 
-    /// Consumable can be used just one time
+    /// Consumable can be used just one time, can be null
     public ConsumableEntity consumable;
 
-    public CharacterEntity(int id, int type, String name, float health, float maxHealth, @NotNull Body body, WeaponEntity weapon, ConsumableEntity consumable) {
-        super(id, type, name, health, maxHealth, body);
+    public CharacterEntity(int id, int type, String name, float health, float maxHealth, @NotNull Body body, @NotNull Material material, WeaponEntity weapon, ConsumableEntity consumable) {
+        super(id, type, name, health, maxHealth, body, material);
         this.weapon = weapon;
         this.consumable = consumable;
     }

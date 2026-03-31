@@ -2,6 +2,7 @@ package ieee.cs.isik.platformergaeme.game;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -16,11 +17,10 @@ public class AnimationMaterial extends Material {
     private final Animation<TextureRegion> animation;
 
     /// This is the total time this animation been played
-    private float stateTime;
+    private float stateTime = 0f;
 
-    public AnimationMaterial(Animation<TextureRegion> animation) {
+    public AnimationMaterial(@NotNull Animation<TextureRegion> animation) {
         this.animation = animation;
-        this.stateTime = 0f;
     }
 
     @Override
